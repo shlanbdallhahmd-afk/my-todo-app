@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تخطيط لوحة تحكم احترافية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f9;
+        }
+
+        /* شبكة الصفحة الرئيسية بالكامل باستخدام Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr; /* عمود جانبي ثابت وعمود محتوى مرن */
+            grid-template-rows: 70px 1fr 50px; /* شريط علوي، محتوى، تذييل */
+            grid-template-areas: 
+                "sidebar header"
+                "sidebar content"
+                "sidebar footer";
+            height: 100vh;
+        }
+
+        /* تنسيق الشريط العلوى */
+        .header {
+            grid-area: header;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* تنسيق الشريط الجانبي */
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            color: #1abc9c;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 10px 0;
+            border-bottom: 1px solid #34495e;
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            color: #1abc9c;
+        }
+
+        /* تنسيق المحتوى الرئيسي */
+        .content {
+            grid-area: content;
+            padding: 25px;
+            background-color: #f4f6f9;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        /* تنسيق تذييل الصفحة */
+        .footer {
+            grid-area: footer;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <!-- الشريط الجانبي -->
+        <div class="sidebar">
+            <h3>لوحة التحكم</h3>
+            <ul>
+                <li>🏠 الرئيسية</li>
+                <li>📊 الإحصائيات</li>
+                <li>👥 المستخدمين</li>
+                <li>⚙️ الإعدادات</li>
+            </ul>
+        </div>
+
+        <!-- الشريط العلوي -->
+        <div class="header">
+            <span>مرحباً بك، أهلاً بك في نظام الإدارة 🚀</span>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="content">
+            <h2>نظرة عامة على النظام</h2>
+            <div class="card-grid">
+                <div class="card">إجمالي المستخدمين: 1,240</div>
+                <div class="card">المبيعات اليومية: $4,500</div>
+                <div class="card">المهام المعلقة: 12</div>
+            </div>
+        </div>
+
+        <!-- تذييل الصفحة -->
+        <div class="footer">
+            جميع الحقوق محفوظة © 2026
+        </div>
+    </div>
+
+</body>
+</html>
